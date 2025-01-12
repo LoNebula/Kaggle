@@ -1,1 +1,1 @@
-https://note.com/k_fukunaka/n/nabb5cd028595
+https://www.kaggle.com/competitions/spaceship-titanic
