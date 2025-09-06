@@ -1,0 +1,12 @@
+services:
+  src:
+    image: main
+    container_name: 'main'
+    environment:
+      - TZ= Asia/Tokyo
+    build: ./src
+    working_dir: '/home/jovyan/work'
+    volumes:
+      - ../src:/home/jovyan/work
+    stdin_open: true
+    tty: true

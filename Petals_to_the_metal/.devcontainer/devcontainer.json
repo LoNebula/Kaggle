@@ -1,0 +1,21 @@
+{
+  "dockerComposeFile": "compose.yml",
+  "service": "src",
+  "workspaceFolder": "/home/jovyan/work",
+  "remoteUser": "jovyan",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-python.python"
+      ],
+      "settings": {
+        "editor.tabSize": 2,
+        "python.defaultInterpreterPath": "/opt/conda/bin/python",
+        "python.linting.flake8Enabled": true,
+        "python.linting.enabled": true,
+        "editor.formatOnSave": true,
+        "python.formatting.provider": "black"
+      }
+    }
+  }
+}
