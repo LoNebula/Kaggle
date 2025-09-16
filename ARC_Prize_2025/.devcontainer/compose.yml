@@ -1,7 +1,7 @@
 services:
   src:
-    image: main
-    container_name: 'main'
+    image: arc-prize
+    container_name: 'arc-prize'
     environment:
       - TZ= Asia/Tokyo
     build: ./src
