@@ -1,7 +1,7 @@
 services:
   src:
-    image: arc-prize
-    container_name: 'arc-prize'
+    image: kaggle
+    container_name: 'kaggle'
     environment:
       - TZ= Asia/Tokyo
     build: ./src

@@ -1,0 +1,64 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environments
+env/
+venv/
+.venv/
+ENV/
+.devcontainer/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Data / outputs (common for Kaggle projects)
+data/
+datasets/
+input/
+output/
+results/
+models/
+weights/
+*.csv
+*.tsv
+*.h5
+*.pth
+*.ckpt
+*.npz
+
+# Kaggle credentials
+kaggle.json
+
+# IDEs / editors / OS files
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Logs, caches, build artifacts
+*.log
+*.tmp
+*.cache
+.pytest_cache/
+.mypy_cache/
+pip-wheel-metadata/
+dist/
+build/
+*.egg-info/
+
+# Secrets / config
+.env
+.env.*
+secrets.json
+credentials.json
+*.pem
+*.key
+
+# Coverage / docs
+htmlcov/
+coverage.xml
