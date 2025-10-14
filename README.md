@@ -18,4 +18,3 @@ After entering the container, start Python and run the following code to check i
 import torch
 print(torch.cuda.is_available())
 ```
-f
