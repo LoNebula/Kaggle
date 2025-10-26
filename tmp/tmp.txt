@@ -1,87 +1,85 @@
-# check the max height and width in challenges data
-def get_max_shape_challenge(data_dict):
-    hs, ws = [], []
-    for section in data_dict.values():
-        for phase in ['train', 'test']:
-            if phase not in section:
-                continue
-            for pair in section[phase]:
-                if 'input' in pair:
-                    inp = torch.tensor(pair['input'])
-                    h, w = inp.shape
-                    hs.append(h)
-                    ws.append(w)
-                if 'output' in pair:
-                    out = torch.tensor(pair['output'])
-                    h, w = out.shape
-                    hs.append(h)
-                    ws.append(w)
-    return max(hs), max(ws)
+tensor([[[[ 0.0000e+00,  8.4147e-01,  9.0930e-01,  ..., -6.6363e-01,
+           -9.8803e-01, -4.0404e-01],
+          [ 0.0000e+00,  8.4147e-01,  9.0930e-01,  ..., -6.6363e-01,
+           -9.8803e-01, -4.0404e-01],
+          [ 0.0000e+00,  8.4147e-01,  9.0930e-01,  ..., -6.6363e-01,
+           -9.8803e-01, -4.0404e-01],
+          ...,
+          [ 0.0000e+00,  8.4147e-01,  9.0930e-01,  ..., -6.6363e-01,
+           -9.8803e-01, -4.0404e-01],
+          [ 0.0000e+00,  8.4147e-01,  9.0930e-01,  ..., -6.6363e-01,
+           -9.8803e-01, -4.0404e-01],
+          [ 0.0000e+00,  8.4147e-01,  9.0930e-01,  ..., -6.6363e-01,
+           -9.8803e-01, -4.0404e-01]],
 
-# check the max height and width in solutions data
-def get_max_shape_solution(data_dict):
-    hs, ws = [], []
-    for section in data_dict.values():
-        h = len(section)
-        w = len(section[0])
-        hs.append(h)
-        ws.append(w)
-    return max(hs), max(ws)
+         [[ 1.0000e+00,  1.0000e+00,  1.0000e+00,  ...,  1.0000e+00,
+            1.0000e+00,  1.0000e+00],
+          [ 5.4030e-01,  5.4030e-01,  5.4030e-01,  ...,  5.4030e-01,
+            5.4030e-01,  5.4030e-01],
+          [-4.1615e-01, -4.1615e-01, -4.1615e-01,  ..., -4.1615e-01,
+           -4.1615e-01, -4.1615e-01],
+          ...,
+          [-7.4806e-01, -7.4806e-01, -7.4806e-01,  ..., -7.4806e-01,
+           -7.4806e-01, -7.4806e-01],
+          [ 1.5425e-01,  1.5425e-01,  1.5425e-01,  ...,  1.5425e-01,
+            1.5425e-01,  1.5425e-01],
+          [ 9.1474e-01,  9.1474e-01,  9.1474e-01,  ...,  9.1474e-01,
+            9.1474e-01,  9.1474e-01]],
 
-max_hight, max_weight = 0, 0
+         [[ 0.0000e+00,  7.6172e-01,  9.8705e-01,  ..., -1.9775e-02,
+            7.4876e-01,  9.9003e-01],
+          [ 0.0000e+00,  7.6172e-01,  9.8705e-01,  ..., -1.9775e-02,
+            7.4876e-01,  9.9003e-01],
+          [ 0.0000e+00,  7.6172e-01,  9.8705e-01,  ..., -1.9775e-02,
+            7.4876e-01,  9.9003e-01],
+          ...,
+          [ 0.0000e+00,  7.6172e-01,  9.8705e-01,  ..., -1.9775e-02,
+            7.4876e-01,  9.9003e-01],
+          [ 0.0000e+00,  7.6172e-01,  9.8705e-01,  ..., -1.9775e-02,
+            7.4876e-01,  9.9003e-01],
+          [ 0.0000e+00,  7.6172e-01,  9.8705e-01,  ..., -1.9775e-02,
+            7.4876e-01,  9.9003e-01]],
 
-for data_dict in [train_challenges, eval_challenges, test_data]:
-    max_h, max_w = get_max_shape_challenge(data_dict)
-    max_hight = max(max_hight, max_h)
-    max_weight = max(max_weight, max_w)
+         ...,
 
-print("Max height and width:",max_hight, max_weight)
+         [[ 1.0000e+00,  1.0000e+00,  1.0000e+00,  ...,  1.0000e+00,
+            1.0000e+00,  1.0000e+00],
+          [ 1.0000e+00,  1.0000e+00,  1.0000e+00,  ...,  1.0000e+00,
+            1.0000e+00,  1.0000e+00],
+          [ 1.0000e+00,  1.0000e+00,  1.0000e+00,  ...,  1.0000e+00,
+            1.0000e+00,  1.0000e+00],
+          ...,
+          [ 9.9999e-01,  9.9999e-01,  9.9999e-01,  ...,  9.9999e-01,
+            9.9999e-01,  9.9999e-01],
+          [ 9.9999e-01,  9.9999e-01,  9.9999e-01,  ...,  9.9999e-01,
+            9.9999e-01,  9.9999e-01],
+          [ 9.9999e-01,  9.9999e-01,  9.9999e-01,  ...,  9.9999e-01,
+            9.9999e-01,  9.9999e-01]],
 
+         [[ 0.0000e+00,  1.1548e-04,  2.3096e-04,  ...,  3.3489e-03,
+            3.4643e-03,  3.5798e-03],
+          [ 0.0000e+00,  1.1548e-04,  2.3096e-04,  ...,  3.3489e-03,
+            3.4643e-03,  3.5798e-03],
+          [ 0.0000e+00,  1.1548e-04,  2.3096e-04,  ...,  3.3489e-03,
+            3.4643e-03,  3.5798e-03],
+          ...,
+          [ 0.0000e+00,  1.1548e-04,  2.3096e-04,  ...,  3.3489e-03,
+            3.4643e-03,  3.5798e-03],
+          [ 0.0000e+00,  1.1548e-04,  2.3096e-04,  ...,  3.3489e-03,
+            3.4643e-03,  3.5798e-03],
+          [ 0.0000e+00,  1.1548e-04,  2.3096e-04,  ...,  3.3489e-03,
+            3.4643e-03,  3.5798e-03]],
 
-for data_dict in [train_solutions, eval_solutions]:
-    max_h, max_w = get_max_shape_solution(data_dict)
-    max_hight = max(max_hight, max_h)
-    max_weight = max(max_weight, max_w)
-
-print("Max height and width:",max_hight, max_weight)
-
-# reshpae to max_height and max_width
-def pad_matrix(x, max_height, max_width):
-    return F.pad(x, (0, max_width - x.shape[1], 0, max_height - x.shape[0]), mode='constant', value=0)
-
-def pad_all_challenges(data_dict, max_height, max_width):
-    result = {}
-    for key, section in data_dict.items():
-        result[key] = {}
-        for phase in ['train', 'test']:
-            if phase not in section:
-                continue
-            result[key][phase] = []
-            for pair in section[phase]:
-                new_pair = {}
-                for k, arr in pair.items():
-                    arr_t = torch.tensor(arr, dtype=torch.float)
-                    new_pair[k] = pad_matrix(arr_t, max_height, max_width)
-                result[key][phase].append(new_pair)
-    return result
-
-def pad_all_solutions(data_dict, max_height, max_width):
-    result = {}
-    for key, section in data_dict.items():
-        result[key] = []
-        for arr in section:
-            arr_t = torch.tensor(arr, dtype=torch.float)
-            result[key].append(pad_matrix(arr_t, max_height, max_width))
-    return result
-
-# insert data in list
-result_datasets = []
-for data in [train_challenges, eval_challenges, test_data]:
-    padded_data_challenges = pad_all_challenges(data, max_hight, max_weight)
-    result_datasets.append(padded_data_challenges)
-
-for data in [train_solutions, eval_solutions]:
-    padded_data_solutions = pad_all_solutions(data, max_hight, max_weight)
-    result_datasets.append(padded_data_solutions)
-
-train_challenges, eval
+         [[ 1.0000e+00,  1.0000e+00,  1.0000e+00,  ...,  1.0000e+00,
+            1.0000e+00,  1.0000e+00],
+          [ 1.0000e+00,  1.0000e+00,  1.0000e+00,  ...,  1.0000e+00,
+            1.0000e+00,  1.0000e+00],
+          [ 1.0000e+00,  1.0000e+00,  1.0000e+00,  ...,  1.0000e+00,
+            1.0000e+00,  1.0000e+00],
+          ...,
+          [ 9.9999e-01,  9.9999e-01,  9.9999e-01,  ...,  9.9999e-01,
+            9.9999e-01,  9.9999e-01],
+          [ 9.9999e-01,  9.9999e-01,  9.9999e-01,  ...,  9.9999e-01,
+            9.9999e-01,  9.9999e-01],
+          [ 9.9999e-01,  9.9999e-01,  9.9999e-01,  ...,  9.9999e-01,
+            9.9999e-01,  9.9999e-01]]]])
